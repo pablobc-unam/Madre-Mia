@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madre Mía! | Juguetes de Apego y Didácticos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-pink: #d64550; /* Warmer, reddish pink */
+            --secondary-pink: #fff0f1; /* Soft warm pink background */
+            --soft-green: #e8f5e9;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --bg-light: #fffafb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Pacifico', cursive;
+            color: var(--primary-pink);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-pink);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--secondary-pink) 0%, #fff 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-top: 40px;
+            animation: zoomIn 1s ease-out 0.8s both;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--primary-pink);
+            color: var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(214, 69, 80, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(214, 69, 80, 0.4);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 25px;
+            padding: 20px;
+            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .about-flex {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Social Section */
+        .social {
+            padding: 80px 0;
+            background: var(--soft-green);
+            text-align: center;
+        }
+
+        .social h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            width: 200px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .social-card:hover {
+            background: var(--primary-pink);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .social-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .social-card span {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background: var(--white);
+            border-top: 1px solid #eee;
+            color: var(--text-light);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; }
+            .about-flex { flex-direction: column-reverse; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#"><img src="assets/logo.jpg" alt="Madre Mía!" class="logo-img"></a>
+            <nav>
+                <a href="#productos">Productos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hecho con el Corazón</h1>
+                <p>Somos un grupo de amigas y abuelitas emprendedoras. Creamos juguetes de apego, didácticos y crochet especialmente para ti, con un toque de magia en cada puntada.</p>
+                <a href="https://wa.me/525544916941" class="btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
+                </a>
+            </div>
+            <img src="assets/hero_banner.png" alt="Madre Mía Juguetes" class="hero-image">
+        </div>
+    </section>
+
+    <section id="productos" class="products">
+        <div class="container">
+            <h2>Nuestras Creaciones</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="assets/product_crochet_bear.png" alt="Oso de Apego">
+                    <h3>Ositos de Apego</h3>
+                    <p>Compañeros suaves y seguros para los más pequeños, tejidos con hilos de la mejor calidad.</p>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product_crochet_rattle.png" alt="Sonaja de Conejito">
+                    <h3>Sonajas Didácticas</h3>
+                    <p>Estimula los sentidos de tu bebé con nuestras sonajas artesanales de madera y crochet.</p>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product_crochet_doll.png" alt="Muñeca Artesanal">
+                    <h3>Muñecas con Alma</h3>
+                    <p>Cada muñeca es única, hecha a mano con paciencia y dedicación para ser un regalo inolvidable.</p>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product_crochet_elephant.png" alt="Elefante de Apego">
+                    <h3>Elefantes de Apego</h3>
+                    <p>Un tierno compañero de juegos, tejido con amor y suavidad incomparable.</p>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product_crochet_lion.png" alt="León Valiente">
+                    <h3>Leones Valientes</h3>
+                    <p>El rey de la selva en su versión más dulce y abrazable para los pequeños exploradores.</p>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product_crochet_blanket.png" alt="Manta de Apego">
+                    <h3>Mantas de Apego</h3>
+                    <p>Suavidad y calidez en cada puntada, perfectas para las siestas más tranquilas.</p>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product_crochet_booties.png" alt="Zapatitos Artesanales">
+                    <h3>Zapatitos con Amor</h3>
+                    <p>Manten los pies de tu bebé calientitos con nuestros zapatitos tejidos a mano.</p>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product_crochet_cactus.png" alt="Cactus Decorativo">
+                    <h3>Cactus de Crochet</h3>
+                    <p>Un toque de alegría y color para decorar el cuarto de los niños sin espinas.</p>
+                </div>
+                <div class="product-card">
+                    <img src="assets/product_crochet_giraffe.png" alt="Jirafa Curiosa">
+                    <h3>Jirafas Curiosas</h3>
+                    <p>Compañeras de cuello largo listas para vivir grandes aventuras imaginarias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="about-flex">
+                <div class="about-image">
+                    <img src="assets/product_crochet_bear.png" alt="Abuelitas Emprendedoras">
+                </div>
+                <div class="about-text">
+                    <h2>Quiénes Somos</h2>
+                    <p>En <strong>Madre Mía!</strong> creemos en la importancia del cariño y el juego en el desarrollo infantil. Somos abuelitas que volcamos nuestra experiencia y amor en cada juguete.</p>
+                    <p>Cada pieza está hecha "despacito", cuidando cada detalle para ofrecer productos únicos que no solo son juguetes, sino tesoros llenos de significado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="social">
+        <div class="container">
+            <h2>¡Síguenos y Platiquemos!</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/madre.mia.juguetes/" class="social-card" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://web.facebook.com/Madre.Mia.Juguetes/" class="social-card" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="tel:5544916941" class="social-card">
+                    <i class="fas fa-phone"></i>
+                    <span>55 4491 6941</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Madre Mía! Juguetes Artesanales. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Hecho con amor por abuelitas emprendedoras.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
